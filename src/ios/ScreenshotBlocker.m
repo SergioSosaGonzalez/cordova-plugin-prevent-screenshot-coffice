@@ -41,23 +41,22 @@ UIImageView* cover;
 - (void)enable:(CDVInvokedUrlCommand *)command
 {
     CDVPluginResult* pluginResult = nil;
-    NSLog(@"Abilita observers");
-    /*
-     [[NSNotificationCenter defaultCenter]addObserver:self
-     selector:@selector(appDidBecomeActive)
-     name:UIApplicationDidBecomeActiveNotification
-     object:nil];
-     [[NSNotificationCenter defaultCenter]addObserver:self
-     selector:@selector(applicationWillResignActive)
-     name:UIApplicationWillResignActiveNotification
-     object:nil];
-     [[NSNotificationCenter defaultCenter] addObserver:self
-     selector:@selector(screenCaptureStatusChanged)
-     name:kScreenRecordingDetectorRecordingStatusChangedNotification
-     object:nil];
-     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-     */
+    NSLog(@"Abilita observers test");
+    [[NSNotificationCenter defaultCenter]addObserver:self
+    selector:@selector(appDidBecomeActive)
+    name:UIApplicationDidBecomeActiveNotification
+    object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self
+    selector:@selector(applicationWillResignActive)
+    name:UIApplicationWillResignActiveNotification
+    object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+    selector:@selector(screenCaptureStatusChanged)
+    name:kScreenRecordingDetectorRecordingStatusChangedNotification
+    object:nil];
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+     
 }
 -(void)listen:(CDVInvokedUrlCommand*)command {
     _eventCommand = command;
